@@ -1,0 +1,23 @@
+<div>
+  <div class="row" style="display: flex; justify-content: center; align-items: center;">
+    <div
+      *ngFor="let pokemon of pokemones"
+      class="col"
+      style="display: flex; justify-content: center; align-items: center; max-width: 15rem;"
+    >
+      <div class="pokemon-card card p-2 mb-2 text-center" (click)="onSelected(pokemon)" style="cursor: pointer;">
+        <div class="card-body">
+          <div class="image-container mb-2">
+            <img
+            class="img-fluid rounded-circle shadow-sm"
+            [src]="pokemon.sprites.front_default"
+          />
+            <h5>{{pokemon.name}}</h5>
+          </div>
+          <h5 class="card-title">
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

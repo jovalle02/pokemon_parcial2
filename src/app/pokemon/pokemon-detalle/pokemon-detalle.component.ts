@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PokemonDetailDto } from '../pokemonDetailDto';
+import { ActivatedRoute } from '@angular/router';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemon-detalle',
@@ -6,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-detalle.component.css']
 })
 export class PokemonDetalleComponent implements OnInit {
+  pokemonId!: string;
+  @Input() pokemonDetail!: PokemonDetailDto;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private pokemonService: PokemonService ) { }
+
+  getPokemon() {
+    this.pokemonService.getPokemon(this.pokemonId).subscribe(pokemon => {
+      this.pokemonDetail = pokemon;
+    });
+  }
 
   ngOnInit() {
   }

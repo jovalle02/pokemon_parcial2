@@ -1,3 +1,22 @@
-<p>
-  pokemon-detalle works!
-</p>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src] = "pokemonDetail.sprites.front_default">
+  <div class="card-body">
+    <h5 class="card-title">{{pokemonDetail.name}}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <h6>Height</h6>
+    <li class="list-group-item">{{pokemonDetail.height}} </li>
+  </ul>
+  <ul class="list-group list-group-flush">
+    <h6>Habilidades</h6>
+    <li class="list-group-item"  *ngFor="let a of pokemonDetail.abilities">{{a.ability.name}}</li>
+  </ul>
+  <ul class="list-group list-group-flush" *ngFor = "let t of pokemonDetail.types">
+    <h6>Tipo</h6>
+    <li class="list-group-item">{{t.type.name}}</li>
+  </ul>
+  <ul class="list-group list-group-flush">
+    <h6>Weight</h6>
+    <li class="list-group-item">{{pokemonDetail.weight}}</li>
+  </ul>
+</div>

@@ -12,7 +12,7 @@ export class PokemonDetalleComponent implements OnInit {
   pokemonId!: string;
   @Input() pokemonDetail!: PokemonDetailDto;
 
-  constructor(private route: ActivatedRoute, private pokemonService: PokemonService ) { }
+  constructor(private pokemonService: PokemonService ) { }
 
   getPokemon() {
     this.pokemonService.getPokemon(this.pokemonId).subscribe(pokemon => {

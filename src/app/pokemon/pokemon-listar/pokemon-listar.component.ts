@@ -8,10 +8,13 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./pokemon-listar.component.css']
 })
 export class PokemonListarComponent implements OnInit {
+
   pokemones: Array<PokemonDetailDto> = []
   
   selectedPokemon! :PokemonDetailDto
   selected: Boolean = false;
+
+  pokemonCountByType: { [type: string]: number } = {};
 
   constructor(private pokemonsService: PokemonService) { }
 

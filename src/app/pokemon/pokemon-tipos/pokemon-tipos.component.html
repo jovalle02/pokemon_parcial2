@@ -1,16 +1,12 @@
 
-<div *ngIf = "selectedPokemon">
-  <app-pokemon-detalle [pokemonDetail]="selectedPokemon"></app-pokemon-detalle>
-</div>
 <div>
-
   <div class="row" style="display: flex; justify-content: center; align-items: center;">
     <div
-      *ngFor="let pokemon of pokemones"
+      *ngFor="let pokemon of pokemonsFiltered"
       class="col"
       style="display: flex; justify-content: center; align-items: center; max-width: 15rem;"
     >
-      <div class="pokemon-card card p-2 mb-2 text-center" (click)="onSelected(pokemon)" style="cursor: pointer;">
+      <div class="pokemon-card card p-2 mb-2 text-center" style="cursor: pointer;">
         <div class="card-body">
           <div class="image-container mb-2">
             <img
@@ -18,7 +14,7 @@
             [src]="pokemon.sprites.front_default"
           />
             <h5>{{pokemon.name}}</h5>
-          </div>
+          </div> 
           <h5 class="card-title">
           </h5>
         </div>
